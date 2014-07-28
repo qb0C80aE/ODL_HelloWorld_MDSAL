@@ -1,0 +1,32 @@
+module mac-port {
+    yang-version 1;
+    namespace "urn:helloworld:macport";
+    prefix macport;
+    import ietf-yang-types {
+        prefix yang;
+        revision-date 2010-09-24;
+    }
+    import opendaylight-inventory {
+        prefix inv;
+        revision-date 2013-08-19;
+    }
+    revision 2014-07-26 {
+    }
+
+    // MACアドレス/NodeとNodeConnector(Port)の対応表
+    container mac-port-entries {
+        config false;
+        list mac-port-entry {
+            key "node mac-address";
+            leaf node {
+                type inv:node-ref;
+            }
+            leaf mac-address {
+                type yang:mac-address;
+            }
+            leaf port {
+                type inv:node-connector-ref;
+            }
+        }
+    }
+}
