@@ -30,6 +30,6 @@ module mac-port {
         }
     }
 
-    // nodeのaurmentsとかにしたほうがよかった･･･？
+    // nodeのaugmentsとかにしたほうがよかった･･･？
 
 }
